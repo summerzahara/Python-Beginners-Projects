@@ -9,23 +9,22 @@ def guess_input():
 def num_guess():
     n = random.randrange(1,51)
     print("Welcome to the number guess game! Guess a number between 1 and 50. You have 5 guess to find the number! Let's get started!")
-    g = guess_input()
     count = 1
-    print(str(n))
-    if (g > n) and (count < 6):
-        print("Your guess is too high!")
-        count += 1
-        print("Turn: " + str(count))
+    while (count <6):
+        print("Turn # " + str(count))
         g = guess_input()
-    elif (g < n) and (count < 6):
-        print("Your guess is too low!")
-        count += 1
-        print("Turn: " + str(count))
-        g = guess_input()
-    elif count > 6:
-        print("You have no more guesses. The number was: " + str(n))
-    else:
-        print("Your guess is correct! " + str(n) + " was the number!")
+        if (g<0 or g>50):
+            print("Enter a valid numver between 1 and 50\n")
+        elif (g > n):
+            print("Your guess is too high!\n")
+            count += 1
+        elif (g < n):
+            print("Your guess is too low!\n")
+            count += 1
+        else:
+            print("Your guess is correct! " + str(n) + " was the number!")
+            break
+    print("You have no more guesses. The number was: " + str(n))
         
     
     
