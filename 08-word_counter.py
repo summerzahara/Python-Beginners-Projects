@@ -12,20 +12,4 @@ def word_counter(txt):
         return 0
 
 
-def o_file(txt):
-    with open(txt, "r") as file:
-        read_file = file.read()
-        print(read_file)
-        return 0
-
-
-#o_file("i_have_a_dream.txt")
-
 word_counter("i_have_a_dream.txt")
-
-def remove():
-    txt = "Hello Sam!"
-    mytable = txt.maketrans("S", "P")
-    print(txt.translate(mytable))
-
-# remove()
