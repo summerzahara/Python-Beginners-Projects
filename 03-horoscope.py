@@ -1,34 +1,19 @@
 # Horoscope Create a simple horoscope program that asks the user for their star sign and outputs a fun horoscope for them. 
 # Bear in mind that your program should display an error message if the user types in their sign wrong.
-def validate_month(month):
+def validate_bday():
     valid_months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    if month in valid_months:
-        return True
-    else:
-        print("Error: invalid month")  
-        return False
-
-def validate_day(day):
-    if (day > 31) or (day < 1):
+    while True:
+        month = input("Enter your month of birth: ").capitalize()
+        if month in valid_months:
+            break
+        print("Error: invalid month")
+    while True:
+        bday = input("Enter the day: ")
+        day = int(bday)
+        if (day < 31) and (day > 1):
+            break
         print("Error: invalid day")
-        return False
-    else:
-        return True
-    
-
-def birthday():
-    month = input("Enter your month of birth: ")
-    m = validate_month(month.capitalize())
-    
-    bday = input("Enter the day: ")
-    day = int(bday)
-    d = validate_day(day)
-
-    if (m == True) and (d == True):
-        return month.capitalize(), day
-    else:
-        return False
-   
+    return month, day
 
 def zodiac(birth_month, birth_day):
     #zodiac
@@ -83,6 +68,6 @@ def zodiac(birth_month, birth_day):
     else:
         print("Error")
 
-x, y = birthday()
+x, y = validate_bday()
 zodiac(x,y)
     
