@@ -1,5 +1,7 @@
 # Python-Beginners-Projects
 
+[Source](https://mikkegoes.com/python-projects-for-beginners/)
+
 ## Completed Projects
 ### 1: Odd or even?
 Let’s start with a super easy project you can build right away. Write a small Python program that asks the user for a number and tells them if it is odd or even.
